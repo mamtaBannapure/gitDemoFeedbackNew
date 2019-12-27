@@ -1,0 +1,87 @@
+<div class="container">
+    <div style="text-align:center">
+    <div class="jumbotron">
+      <h1>Feedback Generation</h1> 
+     
+    </div>
+    <div class="row">
+            <div class="col-md-6"></div>
+            <div class="col-md-6"> </div>
+    </div>
+  </div>
+  <!DOCTYPE html>
+  <div>
+  <nav>
+    <div class="container">
+      <div class="row">
+     <div class="form-group col-md-6">
+    <button class="btn btn-success btn-lg btn-block" (click)="submitFeedback(feedbackShared.f)">Submit Feedback</button>
+    </div>
+    <div class="form-group col-md-6">
+    <button class="btn btn-success btn-lg btn-block" (click)="getFeedback(feedbackShared.f)">Get Feedback</button>
+    </div>
+      </div>
+ 
+
+
+  <div *ngIf="submitfeedbackDiv">
+<div class="container">
+<table class="table table-stripped" style="text-align:center">
+    <tr>
+      <th>Feedback Id</th>
+      <th>Feedback Message</th>
+      <th>Feedback Date</th>
+    </tr>
+    <tr>
+      
+      <td><input type="radio" placeholder="Feedback Id" [(ngModel)]="feedbackShared.f.feedbackId" [ngModelOptions]="{ standalone: true }"></td>
+      
+      <td><input type="text" placeholder="Feedback Message" [(ngModel)]="feedbackShared.f.feedbackMessage" [ngModelOptions]="{ standalone: true }"></td>
+      <td><input type="text" placeholder="Feedback Date" [(ngModel)]="feedbackShared.f.feedbackdate" [ngModelOptions]="{ standalone: true }"></td>
+    </tr>
+    
+  </table>
+  </div>
+  </div>
+  
+
+ <!-- <div class="container">
+    <div class="row">
+   <div class="form-group col-md-4">
+  <button class="btn btn-success btn-lg btn-block" (click)="submitFeedback(feedbackShared.f)">Submit Feedback</button>
+  </div>
+  <div class="form-group col-md-4">
+  <button class="btn btn-success btn-lg btn-block" (click)="getFeedback(feedbackShared.f)">Get Feedback</button>
+  </div>
+  <div class="form-group col-md-4"> 
+  <button class="btn btn-success btn-lg btn-block" (click)="deletFeedback(feedbackshared)">Delete Feedback</button>
+  </div>
+</div>
+-->
+
+  
+<div *ngIf="showfeedbackDiv">
+  <table class="table table-striped">
+  <!--  <table border="10px">-->
+    <thead>
+        <tr>
+          <th>Feedback Id</th>
+          <th>Feedback Message</th>
+          <th>Feedback Date</th>
+            
+    </thead>
+    <tbody>
+      <tr *ngFor="let fb1 of feedbackarray">
+        <td>{{fb1.feedbackId}}</td>
+       <!-- <td><input type="radio" placeholder="Feedback Id" [(ngModel)]="fb1.feedbackId" [ngModelOptions]="{ standalone: true }"</td>-->
+        <td>{{fb1.feedbackMessage}}</td>
+        <td>{{fb1.feedbackdate}}</td>
+          
+          </tr>
+        </tbody>
+        
+    </table>
+  </div>
+</div>
+  
+
